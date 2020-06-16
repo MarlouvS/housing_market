@@ -1,11 +1,11 @@
 # Set up code checking
 import os
+
+from housing_market.scripts.methods import *
+
 if not os.path.exists("../home-data-for-ml-course/train.csv"):
     os.symlink("../home-data-for-ml-course/train.csv", "../home-data-for-ml-course/train.csv")
     os.symlink("../home-data-for-ml-course/test.csv", "../home-data-for-ml-course/test.csv")
-from learntools.core import binder
-binder.bind(globals())
-# from learntools.ml_intermediate.ex1 import *
 print("Setup Complete")
 
 import pandas as pd
@@ -16,8 +16,6 @@ from xgboost import XGBRegressor
 from sklearn.preprocessing import LabelEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.ensemble import GradientBoostingRegressor
-from methods import *
-
 
 # Read the data
 train_df, test_df = read_train_test_data()
